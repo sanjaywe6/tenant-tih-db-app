@@ -1,0 +1,79 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Meeting -->
+		<div class="form-group meetings_agenda_table-meeting_lookup" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Meeting</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="meeting_lookup-readonly<%%RND1%%>"><%%COMBOTEXT(meeting_lookup)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Agenda description -->
+		<div class="form-group meetings_agenda_table-agenda_description" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Agenda description</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(agenda_description)%%></div>
+			</div>
+		</div>
+		<!-- Field: Meetings agenda str -->
+		<div class="form-group meetings_agenda_table-meetings_agenda_str" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Meetings agenda str</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(meetings_agenda_str)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="meetings_agenda_table-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=meetings_agenda_table-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'meetings_agenda_table',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'meetings_agenda_table-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

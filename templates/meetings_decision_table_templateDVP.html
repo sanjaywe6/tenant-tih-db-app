@@ -1,0 +1,85 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Agenda of Meeting -->
+		<div class="form-group meetings_decision_table-agenda_lookup" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Agenda of Meeting</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="agenda_lookup-readonly<%%RND1%%>"><%%COMBOTEXT(agenda_lookup)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Decision description -->
+		<div class="form-group meetings_decision_table-decision_description" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Decision description</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(decision_description)%%></div>
+			</div>
+		</div>
+		<!-- Field: Decision actor -->
+		<div class="form-group meetings_decision_table-decision_actor" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Decision actor</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="decision_actor<%%RND1%%>"><%%COMBOTEXT(decision_actor)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Action taken with date -->
+		<div class="form-group meetings_decision_table-action_taken_with_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Action taken with date</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(action_taken_with_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Decision status -->
+		<div class="form-group meetings_decision_table-decision_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Decision status</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(decision_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Decision status update date -->
+		<div class="form-group meetings_decision_table-decision_status_update_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Decision status update date</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(decision_status_update_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Decision status remarks by superior -->
+		<div class="form-group meetings_decision_table-decision_status_remarks_by_superior" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Decision status remarks by superior</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(decision_status_remarks_by_superior)%%></div>
+			</div>
+		</div>
+		<!-- Field: Meetings decision str -->
+		<div class="form-group meetings_decision_table-meetings_decision_str" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Meetings decision str</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(meetings_decision_str)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

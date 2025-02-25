@@ -1,0 +1,135 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Name -->
+		<div class="form-group visiting_card_table-name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Name</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(name)%%></div>
+			</div>
+		</div>
+		<!-- Field: Recommended by -->
+		<div class="form-group visiting_card_table-recommended_by" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Recommended by</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(recommended_by)%%></div>
+			</div>
+		</div>
+		<!-- Field: Designation -->
+		<div class="form-group visiting_card_table-designation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Designation</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(designation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Company name -->
+		<div class="form-group visiting_card_table-company_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Company name</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(company_name)%%></div>
+			</div>
+		</div>
+		<!-- Field: Mobile no -->
+		<div class="form-group visiting_card_table-mobile_no" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Mobile no</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(mobile_no)%%></div>
+			</div>
+		</div>
+		<!-- Field: Email -->
+		<div class="form-group visiting_card_table-email" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Email</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(email)%%></div>
+			</div>
+		</div>
+		<!-- Field: Company website address -->
+		<div class="form-group visiting_card_table-company_website_addr" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Company website address</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(company_website_addr)%%></div>
+			</div>
+		</div>
+		<!-- Field: Given by -->
+		<div class="form-group visiting_card_table-given_by" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Given by</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="given_by<%%RND1%%>"><%%COMBOTEXT(given_by)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Suggested way forward -->
+		<div class="form-group visiting_card_table-suggested_way_forward" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Suggested way forward</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(suggested_way_forward)%%></div>
+			</div>
+		</div>
+		<!-- Field: Front img -->
+		<div class="form-group visiting_card_table-front_img" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Front img</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="front_imgImg" src="thumbnail.php?t=visiting_card_table&f=front_img&i=<%%VALUE(front_img)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Back img -->
+		<div class="form-group visiting_card_table-back_img" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Back img</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="back_imgImg" src="thumbnail.php?t=visiting_card_table&f=back_img&i=<%%VALUE(back_img)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="visiting_card_table-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=visiting_card_table-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'visiting_card_table',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'visiting_card_table-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

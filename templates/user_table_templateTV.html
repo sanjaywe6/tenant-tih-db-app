@@ -1,0 +1,15 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the user_table_init() hook (in hooks/user_table.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="user_table-id-<%%VALUE(id)%%>" class="user_table-id text-right"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></td>
+		<td id="user_table-memberID-<%%VALUE(id)%%>" class="user_table-memberID"><%%SELECT%%><%%VALUE(memberID)%%><%%ENDSELECT%%></td>
+		<td id="user_table-name-<%%VALUE(id)%%>" class="user_table-name"><%%SELECT%%><%%VALUE(name)%%><%%ENDSELECT%%></td>
+		<td id="user_table-tenant_id-<%%VALUE(id)%%>" class="user_table-tenant_id text-right"><%%SELECT%%><%%VALUE(tenant_id)%%><%%ENDSELECT%%></td>
+		<td id="user_table-created_by-<%%VALUE(id)%%>" class="user_table-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></td>
+		<td id="user_table-created_at-<%%VALUE(id)%%>" class="user_table-created_at"><%%SELECT%%><%%VALUE(created_at)%%><%%ENDSELECT%%></td>
+		<td id="user_table-last_updated_by-<%%VALUE(id)%%>" class="user_table-last_updated_by"><%%SELECT%%><%%VALUE(last_updated_by)%%><%%ENDSELECT%%></td>
+		<td id="user_table-last_updated_at-<%%VALUE(id)%%>" class="user_table-last_updated_at"><%%SELECT%%><%%VALUE(last_updated_at)%%><%%ENDSELECT%%></td>

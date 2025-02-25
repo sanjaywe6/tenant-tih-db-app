@@ -1,0 +1,34 @@
+		<td colspan="7" class="row">
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<dt class="suggestion-id-caption field-caption-tv">ID</dt>
+					<dd id="suggestion-id-<%%VALUE(id)%%>" class="suggestion-id text-right text-bold"><%%VALUE(id)%%></dd>
+
+					<dt class="suggestion-suggestion-caption field-caption-tv">Suggestion</dt>
+					<dd id="suggestion-suggestion-<%%VALUE(id)%%>" class="suggestion-suggestion text-bold"><%%VALUE(suggestion)%%></dd>
+
+					<dt class="suggestion-attachment-caption field-caption-tv">Attachment</dt>
+					<dd id="suggestion-attachment-<%%VALUE(id)%%>" class="suggestion-attachment text-bold"><a href="link.php?t=suggestion&f=attachment&i=<%%VALUE(id)%%>" target="_blank" title="<%%VALUE(attachment)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-picture text-info"></i></a></dd>
+
+					<dt class="suggestion-created_by-caption field-caption-tv">Created By</dt>
+					<dd id="suggestion-created_by-<%%VALUE(id)%%>" class="suggestion-created_by text-bold"><%%VALUE(created_by)%%></dd>
+
+				</dl>
+			</div>
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<dt class="suggestion-created_at-caption field-caption-tv">Created At</dt>
+					<dd id="suggestion-created_at-<%%VALUE(id)%%>" class="suggestion-created_at text-bold"><%%VALUE(created_at)%%></dd>
+
+					<dt class="suggestion-last_updated_by-caption field-caption-tv">Last Updated By</dt>
+					<dd id="suggestion-last_updated_by-<%%VALUE(id)%%>" class="suggestion-last_updated_by text-bold"><%%VALUE(last_updated_by)%%></dd>
+
+					<dt class="suggestion-last_updated_at-caption field-caption-tv">Last Updated At</dt>
+					<dd id="suggestion-last_updated_at-<%%VALUE(id)%%>" class="suggestion-last_updated_at text-bold"><%%VALUE(last_updated_at)%%></dd>
+
+				</dl>
+			</div>
+		</td>
+		<script>$j(function() {
+			var e_attachment = '<%%VALUE(attachment)%%>'; if(e_attachment == '' || e_attachment == '&nbsp;') $j(/*<*/ '#suggestion-attachment-<%%VALUE(id)%%>' /*>*/).html('');
+		});</script>
