@@ -35,6 +35,7 @@
 		"`visiting_card_table`.`last_updated_by`" => "last_updated_by",
 		"`visiting_card_table`.`last_updated_at`" => "last_updated_at",
 		"`visiting_card_table`.`visiting_card_str`" => "visiting_card_str",
+		"`visiting_card_table`.`tenant_id`" => "tenant_id",
 	];
 	// mapping incoming sort by requests to actual query fields
 	$x->SortFields = [
@@ -55,6 +56,7 @@
 		15 => 15,
 		16 => 16,
 		17 => 17,
+		18 => '`visiting_card_table`.`tenant_id`',
 	];
 
 	// Fields that can be displayed in the csv file
@@ -76,6 +78,7 @@
 		"`visiting_card_table`.`last_updated_by`" => "last_updated_by",
 		"`visiting_card_table`.`last_updated_at`" => "last_updated_at",
 		"`visiting_card_table`.`visiting_card_str`" => "visiting_card_str",
+		"`visiting_card_table`.`tenant_id`" => "tenant_id",
 	];
 	// Fields that can be filtered
 	$x->QueryFieldsFilters = [
@@ -94,6 +97,7 @@
 		"`visiting_card_table`.`last_updated_by`" => "Last updated by",
 		"`visiting_card_table`.`last_updated_at`" => "Last updated at",
 		"`visiting_card_table`.`visiting_card_str`" => "Visiting card str",
+		"`visiting_card_table`.`tenant_id`" => "Tenant ID",
 	];
 
 	// Fields that can be quick searched
@@ -113,6 +117,7 @@
 		"`visiting_card_table`.`last_updated_by`" => "last_updated_by",
 		"`visiting_card_table`.`last_updated_at`" => "last_updated_at",
 		"`visiting_card_table`.`visiting_card_str`" => "visiting_card_str",
+		"`visiting_card_table`.`tenant_id`" => "tenant_id",
 	];
 
 	// Lookup fields that can be used as filterers
@@ -148,10 +153,10 @@
 	$x->DefaultSortField = '1';
 	$x->DefaultSortDirection = 'desc';
 
-	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, ];
-	$x->ColCaption = ['ID', 'Name', 'Recommended by', 'Designation', 'Company name', 'Mobile no', 'Email', 'Company website address', 'Given by', 'Suggested way forward', 'Front img', 'Back img', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Visiting card str', ];
-	$x->ColFieldName = ['id', 'name', 'recommended_by', 'designation', 'company_name', 'mobile_no', 'email', 'company_website_addr', 'given_by', 'suggested_way_forward', 'front_img', 'back_img', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'visiting_card_str', ];
-	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, ];
+	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, ];
+	$x->ColCaption = ['ID', 'Name', 'Recommended by', 'Designation', 'Company name', 'Mobile no', 'Email', 'Company website address', 'Given by', 'Suggested way forward', 'Front img', 'Back img', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Visiting card str', 'Tenant ID', ];
+	$x->ColFieldName = ['id', 'name', 'recommended_by', 'designation', 'company_name', 'mobile_no', 'email', 'company_website_addr', 'given_by', 'suggested_way_forward', 'front_img', 'back_img', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'visiting_card_str', 'tenant_id', ];
+	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ];
 
 	// template paths below are based on the app main directory
 	$x->Template = 'templates/visiting_card_table_templateTV.html';

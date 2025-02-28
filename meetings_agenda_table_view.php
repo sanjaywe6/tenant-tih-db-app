@@ -26,6 +26,7 @@
 		"`meetings_agenda_table`.`last_updated_by`" => "last_updated_by",
 		"`meetings_agenda_table`.`last_updated_at`" => "last_updated_at",
 		"`meetings_agenda_table`.`meetings_agenda_str`" => "meetings_agenda_str",
+		"`meetings_agenda_table`.`tenant_id`" => "tenant_id",
 	];
 	// mapping incoming sort by requests to actual query fields
 	$x->SortFields = [
@@ -37,6 +38,7 @@
 		6 => 6,
 		7 => 7,
 		8 => 8,
+		9 => '`meetings_agenda_table`.`tenant_id`',
 	];
 
 	// Fields that can be displayed in the csv file
@@ -49,6 +51,7 @@
 		"`meetings_agenda_table`.`last_updated_by`" => "last_updated_by",
 		"`meetings_agenda_table`.`last_updated_at`" => "last_updated_at",
 		"`meetings_agenda_table`.`meetings_agenda_str`" => "meetings_agenda_str",
+		"`meetings_agenda_table`.`tenant_id`" => "tenant_id",
 	];
 	// Fields that can be filtered
 	$x->QueryFieldsFilters = [
@@ -60,6 +63,7 @@
 		"`meetings_agenda_table`.`last_updated_by`" => "Last updated by",
 		"`meetings_agenda_table`.`last_updated_at`" => "Last updated at",
 		"`meetings_agenda_table`.`meetings_agenda_str`" => "Meetings agenda str",
+		"`meetings_agenda_table`.`tenant_id`" => "Tenant ID",
 	];
 
 	// Fields that can be quick searched
@@ -72,6 +76,7 @@
 		"`meetings_agenda_table`.`last_updated_by`" => "last_updated_by",
 		"`meetings_agenda_table`.`last_updated_at`" => "last_updated_at",
 		"`meetings_agenda_table`.`meetings_agenda_str`" => "meetings_agenda_str",
+		"`meetings_agenda_table`.`tenant_id`" => "tenant_id",
 	];
 
 	// Lookup fields that can be used as filterers
@@ -105,10 +110,10 @@
 	$x->TableIcon = 'table.gif';
 	$x->PrimaryKey = '`meetings_agenda_table`.`id`';
 
-	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, ];
-	$x->ColCaption = ['ID', 'Meeting', 'Agenda description', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Meetings agenda str', ];
-	$x->ColFieldName = ['id', 'meeting_lookup', 'agenda_description', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'meetings_agenda_str', ];
-	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, ];
+	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, ];
+	$x->ColCaption = ['ID', 'Meeting', 'Agenda description', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Meetings agenda str', 'Tenant ID', ];
+	$x->ColFieldName = ['id', 'meeting_lookup', 'agenda_description', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'meetings_agenda_str', 'tenant_id', ];
+	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, ];
 
 	// template paths below are based on the app main directory
 	$x->Template = 'templates/meetings_agenda_table_templateTV.html';

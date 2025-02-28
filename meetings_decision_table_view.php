@@ -31,6 +31,7 @@
 		"`meetings_decision_table`.`last_updated_by`" => "last_updated_by",
 		"`meetings_decision_table`.`last_updated_at`" => "last_updated_at",
 		"`meetings_decision_table`.`meetings_decision_str`" => "meetings_decision_str",
+		"`meetings_decision_table`.`tenant_id`" => "tenant_id",
 	];
 	// mapping incoming sort by requests to actual query fields
 	$x->SortFields = [
@@ -47,6 +48,7 @@
 		11 => 11,
 		12 => 12,
 		13 => 13,
+		14 => '`meetings_decision_table`.`tenant_id`',
 	];
 
 	// Fields that can be displayed in the csv file
@@ -64,6 +66,7 @@
 		"`meetings_decision_table`.`last_updated_by`" => "last_updated_by",
 		"`meetings_decision_table`.`last_updated_at`" => "last_updated_at",
 		"`meetings_decision_table`.`meetings_decision_str`" => "meetings_decision_str",
+		"`meetings_decision_table`.`tenant_id`" => "tenant_id",
 	];
 	// Fields that can be filtered
 	$x->QueryFieldsFilters = [
@@ -80,6 +83,7 @@
 		"`meetings_decision_table`.`last_updated_by`" => "Last updated by",
 		"`meetings_decision_table`.`last_updated_at`" => "Last updated at",
 		"`meetings_decision_table`.`meetings_decision_str`" => "Meetings decision str",
+		"`meetings_decision_table`.`tenant_id`" => "Tenant ID",
 	];
 
 	// Fields that can be quick searched
@@ -97,6 +101,7 @@
 		"`meetings_decision_table`.`last_updated_by`" => "last_updated_by",
 		"`meetings_decision_table`.`last_updated_at`" => "last_updated_at",
 		"`meetings_decision_table`.`meetings_decision_str`" => "meetings_decision_str",
+		"`meetings_decision_table`.`tenant_id`" => "tenant_id",
 	];
 
 	// Lookup fields that can be used as filterers
@@ -132,10 +137,10 @@
 	$x->DefaultSortField = '1';
 	$x->DefaultSortDirection = 'desc';
 
-	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, ];
-	$x->ColCaption = ['ID', 'Agenda of Meeting', 'Decision description', 'Decision actor', 'Action taken with date', 'Decision status', 'Decision status update date', 'Decision status remarks by superior', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Meetings decision str', ];
-	$x->ColFieldName = ['id', 'agenda_lookup', 'decision_description', 'decision_actor', 'action_taken_with_date', 'decision_status', 'decision_status_update_date', 'decision_status_remarks_by_superior', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'meetings_decision_str', ];
-	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, ];
+	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, ];
+	$x->ColCaption = ['ID', 'Agenda of Meeting', 'Decision description', 'Decision actor', 'Action taken with date', 'Decision status', 'Decision status update date', 'Decision status remarks by superior', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Meetings decision str', 'Tenant ID', ];
+	$x->ColFieldName = ['id', 'agenda_lookup', 'decision_description', 'decision_actor', 'action_taken_with_date', 'decision_status', 'decision_status_update_date', 'decision_status_remarks_by_superior', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'meetings_decision_str', 'tenant_id', ];
+	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, ];
 
 	// template paths below are based on the app main directory
 	$x->Template = 'templates/meetings_decision_table_templateTV.html';

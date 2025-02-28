@@ -497,6 +497,7 @@ function event_participants_table_form($selectedId = '', $allowUpdate = true, $a
 	$templateCode = str_replace('<%%UPLOADFILE(last_updated_by)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(last_updated_at)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(event_participants_str)%%>', '', $templateCode);
+	$templateCode = str_replace('<%%UPLOADFILE(tenant_id)%%>', '', $templateCode);
 
 	// process values
 	if($hasSelectedId) {
@@ -528,6 +529,8 @@ function event_participants_table_form($selectedId = '', $allowUpdate = true, $a
 		$templateCode = str_replace('<%%URLVALUE(last_updated_at)%%>', urlencode($urow['last_updated_at']), $templateCode);
 		$templateCode = str_replace('<%%VALUE(event_participants_str)%%>', safe_html($urow['event_participants_str']), $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(event_participants_str)%%>', urlencode($urow['event_participants_str']), $templateCode);
+		$templateCode = str_replace('<%%VALUE(tenant_id)%%>', safe_html($urow['tenant_id']), $templateCode);
+		$templateCode = str_replace('<%%URLVALUE(tenant_id)%%>', urlencode($urow['tenant_id']), $templateCode);
 	} else {
 		$templateCode = str_replace('<%%VALUE(id)%%>', '', $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(id)%%>', urlencode(''), $templateCode);
@@ -553,6 +556,8 @@ function event_participants_table_form($selectedId = '', $allowUpdate = true, $a
 		$templateCode = str_replace('<%%URLVALUE(last_updated_at)%%>', urlencode('<%%editingDateTime%%>'), $templateCode);
 		$templateCode = str_replace('<%%VALUE(event_participants_str)%%>', '', $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(event_participants_str)%%>', urlencode(''), $templateCode);
+		$templateCode = str_replace('<%%VALUE(tenant_id)%%>', '', $templateCode);
+		$templateCode = str_replace('<%%URLVALUE(tenant_id)%%>', urlencode(''), $templateCode);
 	}
 
 	// process translations

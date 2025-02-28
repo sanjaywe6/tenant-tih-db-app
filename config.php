@@ -22,6 +22,7 @@
 		'custom2' => "Address",
 		'custom3' => "City",
 		'custom4' => "State",
+		'custom5' => "Tenant ID",
 		'MySQLDateFormat' => "%d/%m/%Y",
 		'PHPDateFormat' => "j/n/Y",
 		'PHPDateTimeFormat' => "d/m/Y, h:i a",

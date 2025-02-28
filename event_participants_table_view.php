@@ -30,6 +30,7 @@
 		"`event_participants_table`.`last_updated_by`" => "last_updated_by",
 		"`event_participants_table`.`last_updated_at`" => "last_updated_at",
 		"`event_participants_table`.`event_participants_str`" => "event_participants_str",
+		"`event_participants_table`.`tenant_id`" => "tenant_id",
 	];
 	// mapping incoming sort by requests to actual query fields
 	$x->SortFields = [
@@ -45,6 +46,7 @@
 		10 => 10,
 		11 => 11,
 		12 => 12,
+		13 => '`event_participants_table`.`tenant_id`',
 	];
 
 	// Fields that can be displayed in the csv file
@@ -61,6 +63,7 @@
 		"`event_participants_table`.`last_updated_by`" => "last_updated_by",
 		"`event_participants_table`.`last_updated_at`" => "last_updated_at",
 		"`event_participants_table`.`event_participants_str`" => "event_participants_str",
+		"`event_participants_table`.`tenant_id`" => "tenant_id",
 	];
 	// Fields that can be filtered
 	$x->QueryFieldsFilters = [
@@ -76,6 +79,7 @@
 		"`event_participants_table`.`last_updated_by`" => "Last updated by",
 		"`event_participants_table`.`last_updated_at`" => "Last updated at",
 		"`event_participants_table`.`event_participants_str`" => "Event participants str",
+		"`event_participants_table`.`tenant_id`" => "Tenant ID",
 	];
 
 	// Fields that can be quick searched
@@ -92,6 +96,7 @@
 		"`event_participants_table`.`last_updated_by`" => "last_updated_by",
 		"`event_participants_table`.`last_updated_at`" => "last_updated_at",
 		"`event_participants_table`.`event_participants_str`" => "event_participants_str",
+		"`event_participants_table`.`tenant_id`" => "tenant_id",
 	];
 
 	// Lookup fields that can be used as filterers
@@ -127,10 +132,10 @@
 	$x->DefaultSortField = '1';
 	$x->DefaultSortDirection = 'desc';
 
-	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, ];
-	$x->ColCaption = ['ID', 'Event', 'Name', 'Designation', 'Participant type', 'Accepted status', 'Status date', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Event participants str', ];
-	$x->ColFieldName = ['id', 'event_lookup', 'name', 'designation', 'participant_type', 'accepted_status', 'status_date', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'event_participants_str', ];
-	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, ];
+	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, ];
+	$x->ColCaption = ['ID', 'Event', 'Name', 'Designation', 'Participant type', 'Accepted status', 'Status date', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Event participants str', 'Tenant ID', ];
+	$x->ColFieldName = ['id', 'event_lookup', 'name', 'designation', 'participant_type', 'accepted_status', 'status_date', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'event_participants_str', 'tenant_id', ];
+	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, ];
 
 	// template paths below are based on the app main directory
 	$x->Template = 'templates/event_participants_table_templateTV.html';

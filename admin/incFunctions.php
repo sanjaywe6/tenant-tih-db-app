@@ -1392,6 +1392,13 @@
 							'description' => '',
 						],
 					],
+					'tenant_id' => [
+						'appgini' => "INT NULL",
+						'info' => [
+							'caption' => 'Tenant ID',
+							'description' => '',
+						],
+					],
 				],
 				'event_decision_table' => [
 					'id' => [
@@ -1585,6 +1592,13 @@
 							'description' => '',
 						],
 					],
+					'tenant_id' => [
+						'appgini' => "INT NULL",
+						'info' => [
+							'caption' => 'Tenant ID',
+							'description' => '',
+						],
+					],
 				],
 				'meetings_agenda_table' => [
 					'id' => [
@@ -1640,6 +1654,13 @@
 						'appgini' => "TEXT NULL",
 						'info' => [
 							'caption' => 'Meetings agenda str',
+							'description' => '',
+						],
+					],
+					'tenant_id' => [
+						'appgini' => "INT NULL",
+						'info' => [
+							'caption' => 'Tenant ID',
 							'description' => '',
 						],
 					],
@@ -1726,6 +1747,13 @@
 						'appgini' => "TEXT NULL",
 						'info' => [
 							'caption' => 'Meetings participants str',
+							'description' => '',
+						],
+					],
+					'tenant_id' => [
+						'appgini' => "INT NULL",
+						'info' => [
+							'caption' => 'Tenant ID',
 							'description' => '',
 						],
 					],
@@ -1819,6 +1847,13 @@
 						'appgini' => "TEXT NULL",
 						'info' => [
 							'caption' => 'Meetings decision str',
+							'description' => '',
+						],
+					],
+					'tenant_id' => [
+						'appgini' => "INT NULL",
+						'info' => [
+							'caption' => 'Tenant ID',
 							'description' => '',
 						],
 					],
@@ -1940,6 +1975,13 @@
 						'appgini' => "TEXT NULL",
 						'info' => [
 							'caption' => 'Visiting card str',
+							'description' => '',
+						],
+					],
+					'tenant_id' => [
+						'appgini' => "INT NULL",
+						'info' => [
+							'caption' => 'Tenant ID',
 							'description' => '',
 						],
 					],
@@ -3244,7 +3286,7 @@
 					`visiting_card_table`.`designation`,\':\',
 					`visiting_card_table`.`company_name`,\':\',
 					`visiting_card_table`.`given_by`,\':\',
-					`visiting_card_table`.`suggested_way_forward`,\':\',
+					`visiting_card_table`.`suggested_way_forward`
 					) FROM %TABLENAME%
 					
 					WHERE `visiting_card_table`.`id` = %ID%;',

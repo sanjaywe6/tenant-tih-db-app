@@ -1,4 +1,4 @@
-		<td colspan="13" class="row">
+		<td colspan="14" class="row">
 			<div class="col-md-6">
 				<dl class="dl-horizontal">
 					<dt class="event_decision_table-id-caption field-caption-tv">ID</dt>
@@ -40,6 +40,9 @@
 
 					<dt class="event_decision_table-last_updated_at-caption field-caption-tv">Last updated at</dt>
 					<dd id="event_decision_table-last_updated_at-<%%VALUE(id)%%>" class="event_decision_table-last_updated_at"><%%SELECT%%><%%VALUE(last_updated_at)%%><%%ENDSELECT%%></dd>
+
+					<dt class="event_decision_table-tenant_id-caption field-caption-tv">Tenant ID</dt>
+					<dd id="event_decision_table-tenant_id-<%%VALUE(id)%%>" class="event_decision_table-tenant_id text-right"><%%SELECT%%><%%VALUE(tenant_id)%%><%%ENDSELECT%%></dd>
 
 					<dt class="event_decision_table-event_decision_str-caption field-caption-tv">Event decision str</dt>
 					<dd id="event_decision_table-event_decision_str-<%%VALUE(id)%%>" class="event_decision_table-event_decision_str"><%%SELECT%%><%%VALUE(event_decision_str)%%><%%ENDSELECT%%></dd>

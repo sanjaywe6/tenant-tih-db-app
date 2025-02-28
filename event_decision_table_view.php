@@ -137,10 +137,10 @@
 	$x->DefaultSortField = '1';
 	$x->DefaultSortDirection = 'desc';
 
-	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, ];
-	$x->ColCaption = ['ID', 'Expected Outcomes of Meeting', 'Decision description', 'Decision actor', 'Action taken with date', 'Decision status', 'Decision status update date', 'Decision status remarks by superior', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Event decision str', ];
-	$x->ColFieldName = ['id', 'outcomes_expected_lookup', 'decision_description', 'decision_actor', 'action_taken_with_date', 'decision_status', 'decision_status_update_date', 'decision_status_remarks_by_superior', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'event_decision_str', ];
-	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, ];
+	$x->ColWidth = [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, ];
+	$x->ColCaption = ['ID', 'Expected Outcomes of Meeting', 'Decision description', 'Decision actor', 'Action taken with date', 'Decision status', 'Decision status update date', 'Decision status remarks by superior', 'Created by', 'Created at', 'Last updated by', 'Last updated at', 'Tenant ID', 'Event decision str', ];
+	$x->ColFieldName = ['id', 'outcomes_expected_lookup', 'decision_description', 'decision_actor', 'action_taken_with_date', 'decision_status', 'decision_status_update_date', 'decision_status_remarks_by_superior', 'created_by', 'created_at', 'last_updated_by', 'last_updated_at', 'tenant_id', 'event_decision_str', ];
+	$x->ColNumber  = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, ];
 
 	// template paths below are based on the app main directory
 	$x->Template = 'templates/event_decision_table_templateTV.html';

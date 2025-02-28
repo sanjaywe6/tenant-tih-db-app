@@ -1,4 +1,4 @@
-		<td colspan="11" class="row">
+		<td colspan="12" class="row">
 			<div id="meetings_table-id-<%%VALUE(id)%%>" class="meetings_table-id col-sm-12 h5 text-bold"><%%VALUE(id)%%></div>
 			<div class="col-md-6">
 				<dl class="dl-horizontal">
@@ -17,13 +17,13 @@
 					<dt class="meetings_table-meeting_to_date-caption field-caption-tv">Meeting to date</dt>
 					<dd id="meetings_table-meeting_to_date-<%%VALUE(id)%%>" class="meetings_table-meeting_to_date text-bold"><%%VALUE(meeting_to_date)%%></dd>
 
+					<dt class="meetings_table-created_by-caption field-caption-tv">Created by</dt>
+					<dd id="meetings_table-created_by-<%%VALUE(id)%%>" class="meetings_table-created_by text-bold"><%%VALUE(created_by)%%></dd>
+
 				</dl>
 			</div>
 			<div class="col-md-6">
 				<dl class="dl-horizontal">
-					<dt class="meetings_table-created_by-caption field-caption-tv">Created by</dt>
-					<dd id="meetings_table-created_by-<%%VALUE(id)%%>" class="meetings_table-created_by text-bold"><%%VALUE(created_by)%%></dd>
-
 					<dt class="meetings_table-created_at-caption field-caption-tv">Created at</dt>
 					<dd id="meetings_table-created_at-<%%VALUE(id)%%>" class="meetings_table-created_at text-bold"><%%VALUE(created_at)%%></dd>
 
@@ -35,6 +35,9 @@
 
 					<dt class="meetings_table-meetings_str-caption field-caption-tv">Meetings str</dt>
 					<dd id="meetings_table-meetings_str-<%%VALUE(id)%%>" class="meetings_table-meetings_str text-bold"><%%VALUE(meetings_str)%%></dd>
+
+					<dt class="meetings_table-tenant_id-caption field-caption-tv">Tenant ID</dt>
+					<dd id="meetings_table-tenant_id-<%%VALUE(id)%%>" class="meetings_table-tenant_id text-right text-bold"><%%VALUE(tenant_id)%%></dd>
 
 				</dl>
 			</div>

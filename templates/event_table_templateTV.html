@@ -1,4 +1,4 @@
-		<td colspan="11" class="row">
+		<td colspan="12" class="row">
 			<div id="event_table-id-<%%VALUE(id)%%>" class="event_table-id col-sm-12 h5 text-bold"><%%SELECT%%><%%VALUE(id)%%><%%ENDSELECT%%></div>
 			<div class="col-md-6">
 				<dl class="dl-horizontal">
@@ -17,13 +17,13 @@
 					<dt class="event_table-event_to_date-caption field-caption-tv">Event to date</dt>
 					<dd id="event_table-event_to_date-<%%VALUE(id)%%>" class="event_table-event_to_date"><%%SELECT%%><%%VALUE(event_to_date)%%><%%ENDSELECT%%></dd>
 
+					<dt class="event_table-created_by-caption field-caption-tv">Created by</dt>
+					<dd id="event_table-created_by-<%%VALUE(id)%%>" class="event_table-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></dd>
+
 				</dl>
 			</div>
 			<div class="col-md-6">
 				<dl class="dl-horizontal">
-					<dt class="event_table-created_by-caption field-caption-tv">Created by</dt>
-					<dd id="event_table-created_by-<%%VALUE(id)%%>" class="event_table-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></dd>
-
 					<dt class="event_table-created_at-caption field-caption-tv">Created at</dt>
 					<dd id="event_table-created_at-<%%VALUE(id)%%>" class="event_table-created_at"><%%SELECT%%><%%VALUE(created_at)%%><%%ENDSELECT%%></dd>
 
@@ -32,6 +32,9 @@
 
 					<dt class="event_table-last_updated_at-caption field-caption-tv">Last updated at</dt>
 					<dd id="event_table-last_updated_at-<%%VALUE(id)%%>" class="event_table-last_updated_at"><%%SELECT%%><%%VALUE(last_updated_at)%%><%%ENDSELECT%%></dd>
+
+					<dt class="event_table-tenant_id-caption field-caption-tv">Tenant ID</dt>
+					<dd id="event_table-tenant_id-<%%VALUE(id)%%>" class="event_table-tenant_id text-right"><%%SELECT%%><%%VALUE(tenant_id)%%><%%ENDSELECT%%></dd>
 
 					<dt class="event_table-event_str-caption field-caption-tv">Event str</dt>
 					<dd id="event_table-event_str-<%%VALUE(id)%%>" class="event_table-event_str"><%%SELECT%%><%%VALUE(event_str)%%><%%ENDSELECT%%></dd>
