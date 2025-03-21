@@ -9,7 +9,7 @@
 
 	$adminConfig = [
 		'adminUsername' => "admin",
-		'adminPassword' => "\$2y\$10\$7MNt0ZAXKwo1rLRVavZNueKJNoPWBLL1V3PLT5XsS4nw1mvM13PYq",
+		'adminPassword' => "\$2y\$10\$Uds.VuVGVGvqyHkudB74R.acadG7GDsRg454IXN1YtJl9RH7BH5NO",
 		'senderEmail' => "sanjay@iittnif.com",
 		'notifyAdminNewMembers' => "",
 		'defaultSignUp' => "1",
@@ -20,9 +20,8 @@
 		'recordsPerPage' => "10",
 		'custom1' => "Full Name",
 		'custom2' => "Address",
-		'custom3' => "City",
-		'custom4' => "State",
-		'custom5' => "Tenant ID",
+		'custom3' => "Tenant Name",
+		'custom4' => "Tenant ID",
 		'MySQLDateFormat' => "%d/%m/%Y",
 		'PHPDateFormat' => "j/n/Y",
 		'PHPDateTimeFormat' => "d/m/Y, h:i a",

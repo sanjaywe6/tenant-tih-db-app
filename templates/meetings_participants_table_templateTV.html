@@ -1,4 +1,4 @@
-		<td colspan="12" class="row">
+		<td colspan="13" class="row">
 			<div class="col-md-6">
 				<dl class="dl-horizontal">
 					<dt class="meetings_participants_table-id-caption field-caption-tv">ID</dt>
@@ -19,13 +19,13 @@
 					<dt class="meetings_participants_table-accepted_status-caption field-caption-tv">Accepted status</dt>
 					<dd id="meetings_participants_table-accepted_status-<%%VALUE(id)%%>" class="meetings_participants_table-accepted_status"><%%SELECT%%><%%VALUE(accepted_status)%%><%%ENDSELECT%%></dd>
 
+					<dt class="meetings_participants_table-status_date-caption field-caption-tv">Status date</dt>
+					<dd id="meetings_participants_table-status_date-<%%VALUE(id)%%>" class="meetings_participants_table-status_date"><%%SELECT%%><%%VALUE(status_date)%%><%%ENDSELECT%%></dd>
+
 				</dl>
 			</div>
 			<div class="col-md-6">
 				<dl class="dl-horizontal">
-					<dt class="meetings_participants_table-status_date-caption field-caption-tv">Status date</dt>
-					<dd id="meetings_participants_table-status_date-<%%VALUE(id)%%>" class="meetings_participants_table-status_date"><%%SELECT%%><%%VALUE(status_date)%%><%%ENDSELECT%%></dd>
-
 					<dt class="meetings_participants_table-created_by-caption field-caption-tv">Created by</dt>
 					<dd id="meetings_participants_table-created_by-<%%VALUE(id)%%>" class="meetings_participants_table-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></dd>
 
@@ -40,6 +40,9 @@
 
 					<dt class="meetings_participants_table-meetings_participants_str-caption field-caption-tv">Meetings participants str</dt>
 					<dd id="meetings_participants_table-meetings_participants_str-<%%VALUE(id)%%>" class="meetings_participants_table-meetings_participants_str"><%%SELECT%%><%%VALUE(meetings_participants_str)%%><%%ENDSELECT%%></dd>
+
+					<dt class="meetings_participants_table-tenant_id-caption field-caption-tv">Tenant ID</dt>
+					<dd id="meetings_participants_table-tenant_id-<%%VALUE(id)%%>" class="meetings_participants_table-tenant_id text-right"><%%SELECT%%><%%VALUE(tenant_id)%%><%%ENDSELECT%%></dd>
 
 				</dl>
 			</div>

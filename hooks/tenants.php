@@ -71,6 +71,7 @@
 	}
 
 	function tenants_before_insert(&$data, $memberInfo, &$args) {
+		$data = addTenantIDInRequest($memberInfo,$data);
 
 		return TRUE;
 	}
@@ -81,6 +82,7 @@
 	}
 
 	function tenants_before_update(&$data, $memberInfo, &$args) {
+		$data = addTenantIDInRequest($memberInfo,$data);
 
 		return TRUE;
 	}

@@ -9,6 +9,8 @@
 	function event_table_header($contentType, $memberInfo, &$args) {
 		$header='';
 
+		// WindowMessages::add($memberInfo["custom"][3]);
+
 		switch($contentType) {
 			case 'tableview':
 				$header='';
@@ -72,6 +74,8 @@
 
 	function event_table_before_insert(&$data, $memberInfo, &$args) {
 
+		$data = addTenantIDInRequest($memberInfo,$data);
+
 		return TRUE;
 	}
 
@@ -81,6 +85,7 @@
 	}
 
 	function event_table_before_update(&$data, $memberInfo, &$args) {
+		$data = addTenantIDInRequest($memberInfo,$data);
 
 		return TRUE;
 	}

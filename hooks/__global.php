@@ -35,3 +35,14 @@
 
 	}
 
+	// code added by IT Administrato (Sanjay G)
+
+
+	// function to add current tenant id
+	function addTenantIDInRequest($memberInfo,$data){
+		$data['tenant_id'] = $memberInfo['custom'][3];
+
+		return $data;
+	}
+
+

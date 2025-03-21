@@ -13,50 +13,32 @@
 
 		setupTable('user_table', []);
 
-		setupTable('suggestion', [
-				"ALTER TABLE `suggestion` ADD `tenant_id_1` INT NULL ",
-				"ALTER TABLE `suggestion` DROP `tenant_id_1`",
-			]);
+		setupTable('suggestion', []);
 
 		setupTable('event_table', []);
 
 		setupTable('event_outcomes_expected_table', []);
 		setupIndexes('event_outcomes_expected_table', ['event_lookup',]);
 
-		setupTable('event_participants_table', [
-				"ALTER TABLE `event_participants_table` ADD `tenant_id` INT NULL ",
-			]);
+		setupTable('event_participants_table', []);
 		setupIndexes('event_participants_table', ['event_lookup',]);
 
-		setupTable('event_decision_table', [
-				"ALTER TABLE `event_decision_table` ADD `tenant_id_1` INT NULL ",
-				"ALTER TABLE `event_decision_table` DROP `tenant_id_1`",
-			]);
+		setupTable('event_decision_table', []);
 		setupIndexes('event_decision_table', ['outcomes_expected_lookup','decision_actor',]);
 
-		setupTable('meetings_table', [
-				"ALTER TABLE `meetings_table` ADD `tenant_id` INT NULL ",
-			]);
+		setupTable('meetings_table', []);
 		setupIndexes('meetings_table', ['visiting_card_lookup','event_lookup',]);
 
-		setupTable('meetings_agenda_table', [
-				"ALTER TABLE `meetings_agenda_table` ADD `tenant_id` INT NULL ",
-			]);
+		setupTable('meetings_agenda_table', []);
 		setupIndexes('meetings_agenda_table', ['meeting_lookup',]);
 
-		setupTable('meetings_participants_table', [
-				"ALTER TABLE `meetings_participants_table` ADD `tenant_id` INT NULL ",
-			]);
+		setupTable('meetings_participants_table', []);
 		setupIndexes('meetings_participants_table', ['meeting_lookup',]);
 
-		setupTable('meetings_decision_table', [
-				"ALTER TABLE `meetings_decision_table` ADD `tenant_id` INT NULL ",
-			]);
+		setupTable('meetings_decision_table', []);
 		setupIndexes('meetings_decision_table', ['agenda_lookup','decision_actor',]);
 
-		setupTable('visiting_card_table', [
-				"ALTER TABLE `visiting_card_table` ADD `tenant_id` INT NULL ",
-			]);
+		setupTable('visiting_card_table', []);
 		setupIndexes('visiting_card_table', ['given_by',]);
 
 
